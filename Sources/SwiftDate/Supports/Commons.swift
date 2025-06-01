@@ -189,7 +189,8 @@ public struct DateFormats {
 		var parsedDate: Date?
 		for format in formats {
 			formatter.dateFormat = format
-			formatter.locale = region.locale
+//			formatter.locale = region.locale
+            formatter.locale = Locale(identifier: "en_US_POSIX")
 			if let date = formatter.date(from: string) {
 				parsedDate = date
 				break
